@@ -16,6 +16,7 @@
 		263309041E2F3639008A663D /* RxDataSources.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 263309011E2F3639008A663D /* RxDataSources.framework */; };
 		263309051E2F3639008A663D /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 263309021E2F3639008A663D /* RxSwift.framework */; };
 		263309071E2F3671008A663D /* InputCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263309061E2F3671008A663D /* InputCollectionViewCell.swift */; };
+		26FCDA421E3F9611009E8F6E /* InputTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26FCDA411E3F9611009E8F6E /* InputTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		263309011E2F3639008A663D /* RxDataSources.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxDataSources.framework; path = Carthage/Build/iOS/RxDataSources.framework; sourceTree = "<group>"; };
 		263309021E2F3639008A663D /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		263309061E2F3671008A663D /* InputCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputCollectionViewCell.swift; sourceTree = "<group>"; };
+		26FCDA411E3F9611009E8F6E /* InputTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 				263308F51E2F34DA008A663D /* LaunchScreen.storyboard */,
 				263308F81E2F34DA008A663D /* Info.plist */,
 				263309061E2F3671008A663D /* InputCollectionViewCell.swift */,
+				26FCDA411E3F9611009E8F6E /* InputTextField.swift */,
 			);
 			path = TextInputDemo;
 			sourceTree = "<group>";
@@ -180,6 +183,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26FCDA421E3F9611009E8F6E /* InputTextField.swift in Sources */,
 				263308EF1E2F34DA008A663D /* ViewController.swift in Sources */,
 				263309071E2F3671008A663D /* InputCollectionViewCell.swift in Sources */,
 				263308ED1E2F34DA008A663D /* AppDelegate.swift in Sources */,
