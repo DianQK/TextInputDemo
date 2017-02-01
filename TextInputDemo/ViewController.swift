@@ -34,7 +34,7 @@ class ViewController: UIViewController {
 
         inputText.asObservable()
             .bindTo(label.rx.text)
-            .addDisposableTo(disposeBag)
+            .disposed(by: disposeBag)
 
         dataSource.configureCell = { dataSource, collectionView, indexPath, element in
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "InputCollectionViewCell", for: indexPath) as! InputCollectionViewCell
@@ -45,7 +45,7 @@ class ViewController: UIViewController {
                 .subscribe(onNext: { text in
                     element.inputText.value += text
                 })
-                .addDisposableTo(cell.reuseDisposeBag)
+                .disposed(by: cell.reuseDisposeBag)
 
             element.inputText.asObservable()
                 .map({ (text) -> String in
@@ -56,7 +56,7 @@ class ViewController: UIViewController {
                     }
                 })
                 .bindTo(cell.textField.rx.text)
-                .addDisposableTo(cell.reuseDisposeBag)
+                .disposed(by: cell.reuseDisposeBag)
 
              cell.textField.rx.methodInvoked(#selector(UITextField.deleteBackward))
                 .map { _ in }
@@ -65,13 +65,13 @@ class ViewController: UIViewController {
                     let removedIndex = element.inputText.value.index(before: element.inputText.value.endIndex)
                     element.inputText.value.remove(at: removedIndex)
                 })
-                .addDisposableTo(cell.reuseDisposeBag)
+                .disposed(by: cell.reuseDisposeBag)
 
             element.inputText.asObservable().map { $0.lengthOfBytes(using: String.Encoding.utf8) }
                 .map { $0 == indexPath.row }
                 .distinctUntilChanged()
                 .bindTo(cell.isInputing)
-                .addDisposableTo(cell.reuseDisposeBag)
+                .disposed(by: cell.reuseDisposeBag)
 
             return cell
         }
@@ -80,7 +80,7 @@ class ViewController: UIViewController {
             .map { $0.map { InputModel(inputText: $0) } }
             .map { [InputSectionModel(model: "", items: $0)] }
             .bindTo(collectionView.rx.items(dataSource: dataSource))
-            .addDisposableTo(disposeBag)
+            .disposed(by: disposeBag)
 
     }
 
